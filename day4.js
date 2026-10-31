@@ -94,3 +94,19 @@ console.log('Instanceof Investigation:');
 console.log('values instanceof Array:', values instanceof Array); // true
 console.log('values instanceof Object:', values instanceof Object); // true
 console.log('values instanceof Function:', values instanceof Function); // false    
+
+
+//prototype chain exploration
+console.log('Prototype Chain Exploration:');
+console.log('Object.getPrototypeOf(values):', Object.getPrototypeOf(values)); // Array.prototype
+console.log('Object.getPrototypeOf(Object.getPrototypeOf(values)):', Object.getPrototypeOf(Object.getPrototypeOf(values))); // Object.prototype
+console.log('Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(values))):', Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(values)))); // null       
+
+//function is also an object in javascript, so we can check the prototype of a function
+function myFunction6() {
+    console.log('Hello from myFunction6!');
+}
+
+console.log('Prototype of myFunction6:', Object.getPrototypeOf(myFunction6)); // Function.prototype
+console.log('Prototype of Function.prototype:', Object.getPrototypeOf(Function.prototype)); // Object.prototype
+console.log('Prototype of Object.prototype:', Object.getPrototypeOf(Object.prototype)); // null
